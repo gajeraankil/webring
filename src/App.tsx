@@ -1,8 +1,9 @@
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import GlobalFont from "./GlobalFont";
 import Home from "./containers/Home";
-import { ThemeProvider } from "styled-components";
-import { Route, Routes } from "react-router-dom";
+import "./i18n";
 
 const App = () => {
   const theme = {
