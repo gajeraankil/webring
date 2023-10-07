@@ -5,7 +5,9 @@ import { useTranslation } from "react-i18next";
 import { FaPhoneAlt } from "react-icons/fa";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../assets/logo.png";
+import logo from "../assets/images/logo.png";
+import enImg from "../assets/images/united-kingdom.png";
+import deImg from "../assets/images/german.png";
 import i18n from "../i18n";
 
 const Header = () => {
@@ -47,12 +49,14 @@ const Header = () => {
                     className="bg-transparent"
                     onClick={() => handleLanguageChange("en")}
                   >
+                    <img className="me-3" src={enImg} alt="en" />
                     English
                   </Dropdown.Item>
                   <Dropdown.Item
                     className="bg-transparent"
                     onClick={() => handleLanguageChange("de")}
                   >
+                    <img className="me-3" src={deImg} alt="de" />
                     Deutsch
                   </Dropdown.Item>
                 </Dropdown.Menu>
@@ -84,7 +88,7 @@ const Header = () => {
           </div>
         </Container>
       </div>
-      <Navbar collapseOnSelect expand="lg">
+      <Navbar collapseOnSelect expand="lg" className="bg-white">
         <Container>
           <NavLink className="navbar-brand" to="/">
             <img
@@ -156,6 +160,7 @@ const Header = () => {
 };
 
 const Wrapper = styled.header`
+  z-index: 1;
   .top-bar {
     background-color: ${({ theme }) => theme.colors.primary};
     font-size: 14px;
@@ -166,7 +171,7 @@ const Wrapper = styled.header`
     }
 
     .dropdown-menu {
-      width: 152px;
+      --bs-dropdown-min-width: 152px;
 
       .dropdown-item {
         color: ${({ theme }) => theme.colors.secondary};

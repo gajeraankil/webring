@@ -1,10 +1,12 @@
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import Slider from "../components/Slider";
 
 const Home = () => {
-  const { t } = useTranslation();
-
-  return <Wrapper>{t("Home")}</Wrapper>;
+  return (
+    <Wrapper>
+      <Slider />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`

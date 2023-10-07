@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalFont from "./GlobalFont";
 import GlobalStyle from "./GlobalStyle";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 };
