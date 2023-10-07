@@ -1,8 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./GlobalStyle";
 import GlobalFont from "./GlobalFont";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./components/Header";
+import About from "./containers/About";
+import Contact from "./containers/Contact";
 import Home from "./containers/Home";
+import Products from "./containers/Products";
 import "./i18n";
 
 const App = () => {
@@ -20,8 +24,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalFont />
       <GlobalStyle />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </ThemeProvider>
   );
